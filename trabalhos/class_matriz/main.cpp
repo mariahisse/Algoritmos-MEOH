@@ -1,6 +1,6 @@
 #include <iostream>
 #include "gtest/gtest.h"
-#include "imp_matriz.cpp"
+#include "matriz.cpp"
 #include "teste.h"
 
 int main(int argc, char **argv)
