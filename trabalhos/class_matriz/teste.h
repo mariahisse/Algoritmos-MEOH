@@ -59,9 +59,6 @@ TEST(MATRIZ, teste_copia_matriz) {
   Matriz m1(5,5);
   atribuiValoresMatriz(m1);
   Matriz m2(m1);
-  int i, j, l, c;
-  l=m1.getLinha();
-  c=m1.getColuna();
   ASSERT_TRUE(m1 == m2);
 }
 
@@ -156,9 +153,6 @@ TEST(MATRIZ, teste_operador_atribuicao) {
   atribuiValoresMatriz(m1);
   Matriz m2(5,5);
   m2 = m1;
-  int i, j, l, c;
-  l=m1.getLinha();
-  c=m1.getColuna();
   ASSERT_TRUE(m1 == m2);
 }
 
@@ -167,9 +161,6 @@ TEST(MATRIZ, segundo_teste_operador_atribuicao) {
   atribuiValoresMatriz(m1);
   Matriz m2(4,4);
   m2 = m1;
-  int i, j, l, c;
-  l=m1.getLinha();
-  c=m1.getColuna();
   ASSERT_TRUE(m1 == m2);
 }
 
