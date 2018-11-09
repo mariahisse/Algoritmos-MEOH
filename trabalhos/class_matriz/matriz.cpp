@@ -59,11 +59,6 @@ Matriz::~Matriz(){
     desalocaMatriz(mat);
 }
 
-//Overloading do operador []
-int* Matriz::operator[](int valor){
-    return mat[valor];
-}
-
 //Operador de atribuição =, para atribuir valores
 Matriz& Matriz::operator =(const Matriz& copiamatriz){
     int linha, coluna;
@@ -107,10 +102,10 @@ Matriz Matriz::operator +(const Matriz& m1){
 
 //Operador - para subtrair os elementos de duas matrizes de mesma ordem
 Matriz Matriz::operator -(const Matriz& m2){
-    Matriz m(lin,col);
     int linha, coluna;
     linha = m2.getLinha();
     coluna = m2.getColuna();
+    Matriz m(lin,col);
     for(unsigned i=0;i<lin;i++){
         for(unsigned j=0;j<col;j++){
             m[i][j] = mat[i][j];
@@ -151,6 +146,31 @@ Matriz Matriz::operator *(const Matriz& m3){
     else{
         throw invalid_argument("Nao eh possivel multiplicar!");
     }
+}
+
+//Operador == para comparar se duas matrizes são iguais
+bool Matriz::operator ==(const Matriz& m4) const{
+    int linha, coluna;
+    linha = m4.getLinha();
+    coluna = m4.getColuna();
+    if(linha==lin && coluna==col){
+        for(unsigned i=0;i<lin;i++){
+            for(unsigned j=0;j<col;j++){
+                if(mat[i][j] != m4.get(i,j)){
+                     return false;
+                }
+            }
+        }
+    }
+    else{
+        throw invalid_argument("Nao eh possivel comparar!");
+    }
+    return true;
+}
+
+//Overloading do operador []
+int* Matriz::operator[](int valor){
+    return mat[valor];
 }
 
 //Função para atribuir valores a matriz

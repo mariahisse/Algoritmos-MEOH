@@ -28,6 +28,21 @@ TEST(MATRIZ, teste_pega_elemento_matriz) {
   ASSERT_EQ(m1.get(0,0), 5);
 }
 
+TEST(MATRIZ, teste_compara_matriz_igual) {
+  Matriz m1(5,5), m2(5,5);
+  atribuiValoresMatriz(m1);
+  atribuiValoresMatriz(m2);
+  ASSERT_TRUE(m1 == m2);
+}
+
+TEST(MATRIZ, teste_compara_matriz_diferente) {
+  Matriz m1(5,5), m2(5,5);
+  atribuiValoresMatriz(m1);
+  atribuiValoresMatriz(m2);
+  m2[0][0] = 100;
+  ASSERT_FALSE(m1 == m2);
+}
+
 TEST(MATRIZ, teste_funcao_valor_matriz_soma) {
   Matriz m1(5,5);
   atribuiValoresMatriz(m1);
@@ -47,11 +62,7 @@ TEST(MATRIZ, teste_copia_matriz) {
   int i, j, l, c;
   l=m1.getLinha();
   c=m1.getColuna();
-  for(i=0;i<l;i++){
-    for(j=0;j<c;j++){
-       ASSERT_EQ(m1[i][j], m2[i][j]);
-    }
-  }
+  ASSERT_TRUE(m1 == m2);
 }
 
 TEST(MATRIZ, teste_copia_alterando_valor) {
@@ -148,11 +159,7 @@ TEST(MATRIZ, teste_operador_atribuicao) {
   int i, j, l, c;
   l=m1.getLinha();
   c=m1.getColuna();
-  for(i=0;i<l;i++){
-    for(j=0;j<c;j++){
-       ASSERT_EQ(m1[i][j], m2[i][j]);
-    }
-  }
+  ASSERT_TRUE(m1 == m2);
 }
 
 TEST(MATRIZ, segundo_teste_operador_atribuicao) {
@@ -163,11 +170,7 @@ TEST(MATRIZ, segundo_teste_operador_atribuicao) {
   int i, j, l, c;
   l=m1.getLinha();
   c=m1.getColuna();
-  for(i=0;i<l;i++){
-    for(j=0;j<c;j++){
-       ASSERT_EQ(m1[i][j], m2[i][j]);
-    }
-  }
+  ASSERT_TRUE(m1 == m2);
 }
 
 TEST(MATRIZ, terceiro_teste_operador_atribuicao) {

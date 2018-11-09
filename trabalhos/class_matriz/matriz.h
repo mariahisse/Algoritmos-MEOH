@@ -10,6 +10,7 @@ class Matriz{
         Matriz operator +(const Matriz& m1);
         Matriz operator -(const Matriz& m2);
         Matriz operator *(const Matriz& m3);
+        bool operator ==(const Matriz& m4) const;
         int* operator[](int valor);
         int getLinha() const;
         int getColuna() const;
