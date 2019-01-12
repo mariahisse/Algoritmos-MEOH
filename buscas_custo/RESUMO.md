@@ -7,6 +7,7 @@
    Para comparar a eficiência dos algoritmos, uma medida do grau de dificuldade de um algoritmo chamado complexidade computacional foi desenvolvido por Juris Hartmanis e Richard E. Stearns. 
      <p>A complexidade computacional é um ramo que se concentra em classificar problemas computacionais e relacionar entre si, indica quanto esforço é necessário para aplicar um algoritmo ou como é caro.
    <p> Um algoritmo mesmo funcionando corretamente, pode não ser viável sua implementação por requerer muito espaço e tempo. Assim, quando se fala em complexidade computacional umas perguntas surgem, como:
+   
    - O problema é tratável? 
    - O algoritmo demanda uma grande demanda de recursos computacionais?
    - E o custo desse algoritmo?
